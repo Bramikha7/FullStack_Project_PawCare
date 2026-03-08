@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+header {
+  background-color: #301d10;
+  color: white;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.container {
+  width: 95%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 15px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+#navlogo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.vaccinationform {
+  max-width: 450px;
+}
+
+.vacciform{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.vaccinationform h3 {
+    text-align: center;
+  color:#301d10 ;
+  margin-bottom: 15px;
+}
+
+.vaccinationform label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: black;
+}
+
+.vaccinationform input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.savebtn {
+  background: #301d10;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.footer{
+    margin-top: 100px;
+    background-color: #301d10;
+    height: 100px;
+    color: white;
+}
+.footer1{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* Responsive Code for Beginners */
+@media (max-width: 600px) {
+  .vaccinationform {
+    width: 90%;
+    padding: 20px;
+  }
+}

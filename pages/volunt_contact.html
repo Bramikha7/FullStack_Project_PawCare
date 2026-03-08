@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO Dashboard</title>
+    <link rel="stylesheet" href="../styles/volunt_contact.css">
+</head>
+<body>
+    <header>
+      <nav class="nav_bar">
+        <div class="logo">
+          <img
+            class="logo_img"
+            src="../assets/Logo.png"
+            alt="Logo Image"
+            width="70px"
+            height="70px"
+          />
+          <h2><a href="../pages/volunt_dashboard.html">Paw Care</a></h2>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav_link">
+          <li><b><a href="../pages/volunt_about.html">About</a></b></li>
+          <li><b><a href="../pages/vaccidrive.html">Vaccination Info</a></b></li>
+          <li><b><a href="../pages/volunt_donation.html">Donate</a></b></li>
+          <li><b><a href="../pages/report.html">Report Case</a></b></li>
+          <li><b><a href="../pages/volunt_contact.html">Contact</a></b></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="big_box">
+      <div class="box1">
+        <h1>Contact Paw Care</h1><br/>
+        <div class="contact_img">
+  <img src="../assets/contact1.jpg"
+  alt="image"
+  width="60px"
+  height="60px"
+/>
+  <h2>Email </h2>
+</div>
+        <p>Send Us a Detailed Message
+
+pawcare@gmail.com
+
+Response within 24 hours</p><br/><br/>
+<div class="contact_img">
+  <img src="../assets/contact2.jpg"
+  alt="image"
+  width="60px"
+  height="60px"/>
+  <h2>Phone</h2>
+</div>
+<p>Speak directly with our team
+
+9091534580
+
+Mon-Fri, 9AM-6PM</p>
+      </div>
+      <div class="box2">
+       <form>
+        <label>Full Name </label><br/><br/>
+            <input type="text" placeholder="Enter your full name" required><br/><br/>
+            <label>Email Address </label><br/><br/>
+            <input type="email" placeholder="Enter your email" required><br/><br/>
+            <label>Phone Number</label><br/><br/>
+            <input type="tel" placeholder="Enter your number"><br/><br/>
+            <label>City</label><br/><br/>
+            <input type="text" placeholder="Enter your city"><br/><br/>
+            <label>Subject </label><br/><br/>
+            <textarea rows="1" placeholder="Enter the subject" required></textarea><br/><br/>
+            <label>Message </label><br/><br/>
+            <textarea rows="4" placeholder="Enter the message" required></textarea><br/><br/>
+            <button type="submit" class="submitbtn"> Send Message</button>
+       </form>
+      </div>
+    </section>
+    <footer class="footer">
+        <div class="footer1">
+            <p>2026 Paw Care!</p>
+        </div>
+    </footer>
+    <script>
+      function toggleMenu() {
+        const navMenu = document.querySelector('.nav_link');
+        navMenu.classList.toggle('active');
+      }
+    </script>
+</body>
+</html>

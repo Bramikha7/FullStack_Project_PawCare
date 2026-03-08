@@ -1,0 +1,221 @@
+.nav_bar{
+    background-color: #301d10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    color: #301d10;
+}
+.nav_link{
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+.nav_link a{
+    text-decoration: none;
+    color: white;
+}
+.nav_link button{
+    height: 25px;
+    width: 60px;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    margin-right: 20px;
+}
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo a{
+    text-decoration: none;
+    color: white;
+}
+.logo img{
+    border-radius: 50px;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+  font-family: "Poppins",sans-serif;
+}
+.mission {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+}
+
+.mission h2 {
+  color: #301d10;
+  margin-bottom: 20px;
+}
+
+.mission p {
+  max-width: 700px;
+  margin: 0 auto 20px;
+  color:black;
+  line-height: 1.6;
+}
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 100px;
+  color: #301d10;
+  min-height: 90vh;
+  flex-wrap: wrap;
+}
+
+.heroleft {
+  flex: 1;
+  margin-bottom: 100px;
+}
+
+.heroleft h1 {
+  font-size: 50px;
+  color: #301d10;
+  margin-bottom: 15px;
+}
+
+.heroleft p {
+  font-size: 16px;
+  color: #301d10;
+  margin-bottom: 25px;
+}
+
+.heroright {
+  flex: 1;
+}
+
+.heroright img {
+  width: 600px;
+  border-radius: 50%;
+  max-width: 500px;
+  height: 550px;
+  margin-bottom: 100px;
+  margin-left: 80px;
+  filter: drop-shadow(1px 1px 30px #301d10);
+}
+.btnoutline {
+  border: 2px solid #301d10;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #301d10;
+  font-weight: 600;
+}
+
+.btnoutline:hover {
+  background: #301d10;
+  color: white;
+}
+.campaigns {
+  padding: 60px 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.campaigns h2 {
+  text-align: center;
+  font-size: 32px;
+  color: #301d10;
+  margin-bottom: 40px;
+}
+
+.campaigncards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 15px 15px 5px;
+  color: #301d10;
+}
+
+.card p {
+  padding: 0 15px 20px;
+  font-size: 14px;
+  color: black;
+}
+.footer{
+    margin-top: 100px;
+    background-color: #301d10;
+    height: 100px;
+    color: white;
+}
+.footer1{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* Responsive Code for Beginners */
+@media (max-width: 768px) {
+  .nav_bar {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .nav_link {
+    display: none; /* Hide menu by default on mobile */
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
+  }
+  .nav_link.active {
+    display: flex; /* Show menu when active class is added */
+  }
+  .hamburger {
+    display: flex !important; /* Show hamburger button on small screens */
+  }
+  .hero {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .heroleft h1 {
+    font-size: 30px;
+  }
+  .heroleft {
+    margin-bottom: 30px;
+  }
+  .heroright img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-left: 0;
+    margin-bottom: 40px;
+  }
+}

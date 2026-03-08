@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NGO Dashboard</title>
+  <link rel="stylesheet" href="../styles/ngodashboard.css">
+</head>
+
+<body>
+  <header>
+    <nav class="nav_bar">
+      <div class="logo">
+        <img class="logo_img" src="../assets/Logo.png" alt="Logo Image" width="70px" height="70px" />
+        <h2><a href="../index.html">Paw Care</a></h2>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav_link">
+        <li><b><a href="../pages/ngoabout.html">About</a></b></li>
+        <li><b><a href="../pages/registered_volunt.html">Registered Volunteer</a></b></li>
+        <li><b><a href="../pages/report_case.html">Report Cases</a></b></li>
+        <li><b><a href="../pages/completedcase.html">Completed Cases</a></b></li>
+        <li><b><a href="../pages/contact_ngo.html">Contact</a></b></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="heroleft">
+      <h1>Manageing the Cases that reported by our volunteers & Save More Lives</h1>
+      <p>
+        Plan manage volunteers, track reported cases,
+        and showcase your impact — all in one place.
+      </p>
+
+
+    </div>
+
+    <div class="heroright">
+      <img src="../assets/ngobanner.png" alt="NGO Dashboard" />
+    </div>
+  </section>
+  <section class="mission">
+    <h2>Your Role as an NGO Partner</h2>
+    <div class="stats-container" style="display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap;">
+      <div class="stat-card"
+        style="padding: 20px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; flex: 1; min-width: 200px; text-align: center;">
+        <h3 style="margin-bottom: 10px;">Registered Volunteers</h3>
+        <p id="voluntCount" style="font-size: 28px; font-weight: bold; color: #ff6b6b;">0</p>
+      </div>
+      <div class="stat-card"
+        style="padding: 20px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; flex: 1; min-width: 200px; text-align: center;">
+        <h3 style="margin-bottom: 10px;">NGO Partners</h3>
+        <p id="ngoCount" style="font-size: 28px; font-weight: bold; color: #4ecdc4;">0</p>
+      </div>
+    </div>
+    <p>
+      As an NGO partner, you play a vital role in organizing vaccination
+      programs, coordinating volunteers, responding to reported cases, and
+      building safer communities for stray animals.
+    </p>
+  </section>
+  <section class="campaigns">
+    <h2>What You Can Do</h2>
+
+    <div class="campaigncards">
+      <div class="card">
+        <img src="../assets/ngo1.jpg" alt="Drives" />
+        <h3>Contacting our Volunteers</h3>
+        <p>
+          Contacting our Volunteers who reported the cases about the stray dogs in their nearby lives and streets.
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="../assets/ngo2.jpg" alt="Volunteers" />
+        <h3>Manage Volunteers</h3>
+        <p>
+          Assign volunteers to drives and coordinate activities effectively.
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="../assets/ngo3.jpg" alt="Reports" />
+        <h3>Handle Reported Cases</h3>
+        <p>
+          Review and take action on cases reported by the public and
+          volunteers.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="howitworks">
+    <h2>How PawCare Works for NGOs</h2>
+
+    <div class="steps">
+      <div class="step"><span>1</span>
+        <p>Contacting our Volunteers</p>
+      </div>
+      <div class="step"><span>2</span>
+        <p>Asking the information</p>
+      </div>
+      <div class="step"><span>3</span>
+        <p>Review the Case Reports</p>
+      </div>
+      <div class="step"><span>4</span>
+        <p>Track Impact</p>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer1">
+      <p>2026 Paw Care!</p>
+    </div>
+  </footer>
+  <script>
+    function toggleMenu() {
+      const navMenu = document.querySelector('.nav_link');
+      navMenu.classList.toggle('active');
+    }
+  </script>
+</body>
+
+</html>

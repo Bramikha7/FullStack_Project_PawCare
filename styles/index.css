@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: white;
+
+}
+.nav_bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #301d10;
+    color: white;
+    border: 1px solid #301d10;
+}
+.nav_link{
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+}
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+.nav_link a{
+    text-decoration: none;
+    color: white;
+}
+.nav_link button{
+    height: 25px;
+    width: 60px;
+    background-color: #301d10;
+    border-radius: 15px;
+    border: 2px solid white;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo_img{
+    border-radius: 50%;
+}
+.image1{
+    height: 800px;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    object-fit: cover;
+}
+.banner_img{
+    /* background:linear-gradient(#6b503f,white); */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.banner{
+    max-width: 600px;
+    width: 90%;
+    margin-left: 100px;
+    border-radius: 50px;
+    text-align: center;
+    padding: 20px;
+}
+.banner h1{
+    color: black;
+    margin-bottom: 100px;
+    font-size:60px;
+    font-weight: 800;
+}
+.banner p{
+    color: black;
+    font-size:20px;
+    margin-bottom: 100px;
+    line-height: 2.1;
+    font-weight: 200;
+}
+.banner2 img{
+    height: 600px;
+    margin-top: 40px;
+    border-radius: 50%;
+    margin-right: 50px;
+}
+.mission{
+    
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.mission1:hover{
+    transform: translateY(-6px);
+}
+.mission1{
+    border: 1px solid #301d10;
+    min-height: 140px;
+    max-width: 450px;
+    width: 90%;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 100px;
+    transition: transform 0.3s ease;
+}
+.mission1 h2{
+    color:#301d10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.mission1 p{
+    color: #301d10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.footer{
+    margin-top: 100px;
+    background-color: #301d10;
+    height: 100px;
+    color: white;
+}
+.footer1{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+@media (max-width:768px) {
+    .banner2 img{
+        width: 300px;
+        height: 250px;
+    }
+    .banner{
+        margin-left: 0px;
+    }
+    .nav_link {
+        display: none; /* Hide menu by default on mobile */
+        flex-direction: column;
+        padding: 10px 0;
+        align-items: center;
+        width: 100%;
+    }
+    .nav_link.active {
+        display: flex; /* Show menu when active class is added */
+    }
+    .hamburger {
+        display: flex !important; /* Show hamburger icon on mobile */
+    }
+    .banner_img {
+        flex-direction: column;
+        text-align: center;
+    }
+    .banner2 img{
+        width: 80%;
+        height: auto;
+        margin-right: 0;
+    }
+    .banner{
+        width: 90%;
+        margin-left: 0px;
+    }
+    .banner h1 {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+    .mission {
+        flex-direction: column;
+        align-items: center;
+    }
+    .mission1 {
+        width: 90%;
+        margin-top: 30px;
+    }
+    .image1 {
+        width: 100%;
+        height: auto;
+    }
+}

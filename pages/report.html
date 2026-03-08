@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report Cases</title>
+    <link rel="stylesheet" href="../styles/report.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav_bar">
+        <div class="logo">
+          <img
+            class="logo_img"
+            src="../assets/Logo.png"
+            alt="Logo Image"
+            width="70px"
+            height="70px"
+          />
+          <h2><a href="../pages/volunt_dashboard.html">Paw Care</a></h2>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav_link">
+          <li>
+            <b><a href="../pages/volunt_about.html">About</a></b>
+          </li>
+          <li>
+            <b
+              ><a href="../pages/vaccidrive.html">Vaccination Info</a></b
+            >
+          </li>
+          <li>
+            <b><a href="../pages/volunt_donation.html">Donate</a></b>
+          </li>
+          <li>
+            <b><a href="../pages/report.html">Report Case</a></b>
+          </li>
+          <li>
+            <b><a href="../pages/volunt_contact.html">Contact</a></b>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="container">
+      <h1>Case Report Form</h1>
+      <form id="myForm">
+        <div class="report">
+          <h2>Your Information</h2>
+          <div class="report1">
+            <div class="report2">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" placeholder="Enter your name" />
+            </div>
+            <div class="report2">
+              <label for="number">Phone Number</label>
+              <input type="text" id="phone" placeholder="Enter your Phone Number" />
+            </div>
+            <div class="report2">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="Enter your Email" />
+            </div>
+          </div>
+            <div class="report3">
+              <h2>Location</h2><br/>
+              <div class="report5">
+              <div class="report2">
+                <label for="Address">Street Address</label>
+                <input type="text" id="address" placeholder="Enter your Address" />
+              </div>
+              <div class="report2">
+                <label for="city">City</label>
+                <input type="text" id="city" placeholder="Enter your city" />
+              </div>
+              <div class="report2">
+                <label for="pincode">PinCode</label>
+                <input type="text" id="pincode" placeholder="Enter your pincode" />
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="report4">
+            <h2>Case Details</h2>
+            <div class="report5">
+              <div class="report2">
+                <label for="number">Number of Dogs</label>
+                <input type="number" id="dogs" placeholder="Enter The number of dogs" />
+              </div>
+              <div class="report2">
+                <label>Urgency Level</label>
+                <input type="text" id="urgent" placeholder="Enter the urgency level" />
+              </div>
+              <div class="report2">
+                <label>Detailed Description</label>
+                <input type="text"id=description placeholder="Enter the description" />
+              </div>
+              <div class="report2">
+                <label>Best time to visit</label>
+                <input type="text" id="time" placeholder="Enter the time to visit" />
+              </div>
+            </div>
+          </div>
+          <button type="submit">Submit Report</button>
+
+        </div>
+      </form>
+    </section>
+    <footer class="footer">
+        <div class="footer1">
+            <p>2026 Paw Care!</p>
+        </div>
+    </footer>
+        <script>
+      function toggleMenu() {
+        const navMenu = document.querySelector('.nav_link');
+        navMenu.classList.toggle('active');
+      }
+    </script>
+</body>
+    <script src="../js/report.js"></script>
+</html>

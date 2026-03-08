@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paw Care Landing page</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav_bar">
+        <div class="logo">
+          <img
+            class="logo_img"
+            src="./assets/Logo.png"
+            alt="Logo Image"
+            width="70px"
+            height="70px"
+          />
+          <h2>Paw Care</h2>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav_link">
+          <li><b><a href="./pages/about.html">About</a></b></li>
+          <li><b><a href="./pages/contact.html">Contact</a></b></li>
+          <li>
+            <button><b><a href="./pages/sign in.html">Log In</a></b></button>
+          </li>
+          <li>
+            <button><b><a href="./pages/sign up.html">Sign Up</a></b></button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="banner_img">
+      <div class="banner">
+        <h1>Welcome to Paw Care</h1>
+        <p>
+          Paw Care is a Platform Where you can Donate the Money for the Rabies
+          Vaccination for Stray Dogs.
+        </p>
+      </div>
+      <div class="banner2">
+        <img src="./assets/bannerimage.jpeg" alt="Image"/>
+      </div>
+    </section>
+    <section class="mission">
+      <div class="mission1">
+        <h2>Our Mission</h2><br/>
+        <p>Paw Care is a Platform where your can Donate the Money
+             for the Rabies Vaccination for Stray Dogs.</p>
+      </div>
+    </section>
+    
+        
+    <footer class="footer">
+        <div class="footer1">
+            <p>2026 Paw Care!</p>
+        </div>
+    </footer>
+    <script>
+      function toggleMenu() {
+        const navMenu = document.querySelector('.nav_link');
+        navMenu.classList.toggle('active');
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <link rel="stylesheet" href="../styles/sign in.css" />
+  </head>
+  <body>
+    <section class="image">
+      <img src="../assets/sign in.png" alt="Sign In Image" />
+    </section>
+
+    <div class="label">
+      <div class="label2">
+        <h1>Login</h1>
+
+        <form id="signinForm">
+          <label>Role</label><br />
+          <select id="roleSelect" required>
+            <option value="">Select Role</option>
+            <option value="volunteer">Volunteer</option>
+            <option value="ngo">NGO Partner</option>
+          </select><br /><br />
+
+          <label>Email</label><br />
+          <input
+            type="text"
+            id="email"
+            required
+            placeholder="Enter your Email"
+          /><br /><br />
+
+          <label>Password</label><br />
+          <input
+            type="password"
+            id="password"
+            required
+            placeholder="Enter your Password"
+          /><br /><br />
+          <button type="submit" class="back1">Login</button>
+        </form>
+
+        <p>
+          Don't have an Account?
+          <a href="../pages/sign up.html">Sign Up</a>
+        </p>
+        <a href="../index.html">
+          <button class="back"><b>Back to home</b></button>
+        </a>
+      </div>
+    </div>
+    <script src="../js/auth.js"></script>
+  </body>
+</html>

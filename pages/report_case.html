@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reported cases</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #main {
+            display: flex;
+            padding: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin: 40px;
+        }
+
+        .card {
+            font-family: sans-serif;
+            text-align: start;
+            padding: 15px;
+            border-radius: 8px;
+            width: 300px;
+            line-height: 1.9;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav_bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px;
+            background-color: #301d10;
+            color: white;
+        }
+
+        .nav_link {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav_link a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav_link button {
+            height: 25px;
+            width: 60px;
+            border-radius: 15px;
+            border: 2px solid black;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo_img {
+            border-radius: 50%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+
+        .head {
+            text-align: center;
+            color: #301d10;
+            padding: 20px;
+        }
+
+        .footer {
+            margin-top: 100px;
+            background-color: #301d10;
+            height: 100px;
+            color: white;
+        }
+
+        .footer1 {
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        /* Responsive Code for Beginners */
+        @media (max-width: 768px) {
+            .nav_bar {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 10px;
+            }
+            .nav_link {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+                padding: 10px 0;
+                width: 100%;
+            }
+            .nav_link.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex !important;
+            }
+            #main {
+                padding: 10px;
+                margin: 20px 0;
+            }
+            .card {
+                width: 90%;
+            }
+        }
+    </style>
+    <header>
+        <nav class="nav_bar">
+            <div class="logo">
+                <img class="logo_img" src="../assets/Logo.png" alt="Logo Image" width="70px" height="70px" />
+                <h2><a href="../pages/ngodashboard.html">Paw Care</a></h2>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav_link">
+                <li><b><a href="../pages/ngoabout.html">About</a></b></li>
+                <li><b><a href="../pages/registered_volunt.html">Registered Volunteer</a></b></li>
+                <li><b><a href="../pages/report_case.html">Report Cases</a></b></li>
+                <li><b><a href="../pages/completedcase.html">Completed Cases</a></b></li>
+                <li><b><a href="../pages/contact_ngo.html">Contact</a></b></li>
+            </ul>
+        </nav>
+    </header>
+    <h1 class="head">Reported Cases</h1>
+    <p id="main"></p>
+    <footer class="footer">
+        <div class="footer1">
+            <p>2026 Paw Care!</p>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav_link');
+            navMenu.classList.toggle('active');
+        }
+    </script>
+</body>
+<script src="../js/report_case.js"></script>
+
+</html>

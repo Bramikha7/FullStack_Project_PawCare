@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up Paw Care</title>
+  <link rel="stylesheet" href="../styles/sign up.css" />
+</head>
+
+<body>
+
+  <section class="image">
+    <img src="../assets/sign in.png" alt="Image" />
+  </section>
+
+  <div class="label">
+    <div class="label2">
+      <h1>Sign Up</h1>
+      <form id="signupForm">
+
+        <label>Name</label><br />
+        <input type="text" id="name" required placeholder="Enter your Name" /><br /><br />
+
+        <label>Email</label><br />
+        <input type="email" id="email" required placeholder="Enter your Email" /><br /><br />
+
+        <label>Phone Number</label><br />
+        <input type="tel" id="phone" required placeholder="Enter your Phone Number" /><br /><br />
+
+        <label>Choose your role:</label><br />
+        <select id="role" name="roles" required>
+          <option value="">Select One</option>
+          <option value="volunteer">Volunteer</option>
+          <option value="ngo">NGO Partner</option>
+        </select>
+        <br /><br />
+
+        <div id="result"></div>
+
+        <label>Password</label><br />
+        <input type="password" id="password" required placeholder="Enter your Password" /><br /><br />
+
+        <button type="submit">Sign Up</button>
+
+      </form>
+
+      <p>
+        Already have an Account?
+        <a href="../pages/sign in.html">Sign In</a>
+      </p>
+
+    </div>
+  </div>
+
+  <script src="../js/auth.js"></script>
+  <script>
+    const roleSelect = document.getElementById("role");
+    const resultDiv = document.getElementById("result");
+
+    roleSelect.addEventListener("change", function () {
+
+      if (roleSelect.value === "ngo") {
+
+        resultDiv.innerHTML = `
+          <label>NGO Name:</label><br>
+          <input type="text" id="ngoName" required placeholder="Enter NGO Name"><br><br>
+
+          <label>About NGO:</label><br>
+          <textarea id="aboutNgo" required placeholder="Write about NGO"></textarea><br><br>
+
+          <label>Service Area:</label><br>
+          <input type="text" id="serviceArea" required placeholder="Enter Service Area"><br><br>
+          
+          <label>City:</label><br>
+          <input type="text" id="city" required placeholder="Enter City"><br><br>
+        `;
+
+      } else {
+        resultDiv.innerHTML = "";
+      }
+
+    });
+  </script>
+
+</body>
+</html>

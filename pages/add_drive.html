@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add</title>
+    <link rel="stylesheet" href="../styles/add_drive.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <h2 id="navlogo">Paw Care Admin</h2>
+        </nav>
+      </div>
+    </header>
+    <div class="vacciform">
+      <div class="card vaccinationform">
+        <h3>Add New Vaccination Drive</h3>
+
+        <form id="driveForm">
+          <label>Drive Title</label>
+          <input
+            type="text"
+            id="title"
+            placeholder="Enter the title"
+            required
+          />
+
+          <label>Location</label>
+          <input
+            type="text"
+            id="location"
+            placeholder="Eg: Enter the Location"
+            required
+          />
+
+          <label>Drive Date</label>
+          <input type="date" id="date" required />
+
+          <label>Drive Time</label>
+          <input type="time" id="time" required />
+
+          <button type="submit" class="savebtn">Save</button>
+        </form>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer1">
+        <p>2026 Paw Care!</p>
+      </div>
+    </footer>
+  </body>
+    <script src="../js/manage_drive.js"></script>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+ *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* background:linear-gradient(#6b503f,white); */
+    font-family: Arial, Helvetica, sans-serif;
+}
+.nav_bar{
+    background-color: #301d10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    color: #301d10;
+    /* border: 1px solid #ccc; */
+}
+.nav_link{
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+.nav_link a{
+    text-decoration: none;
+    color: white;
+}
+.nav_link button{
+    height: 25px;
+    width: 60px;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    margin-right: 20px;
+}
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo a{
+    text-decoration: none;
+    color: white;
+}
+.logo_img{
+    border-radius: 50%;
+}
+/* .report{
+    width: 300px;
+    height: 600px;
+}
+.report1{
+    display: grid;
+    grid-template-columns: repeat(3,200px);
+    grid-template-rows: repeat(3,100px);
+    gap: 40px;
+}
+.report3{
+    display: grid;
+    grid-template-columns: repeat(4,300px);
+    grid-template-rows: repeat(3,300px);
+    gap: 10px;
+}
+.report5{
+    display: grid;
+    grid-template-columns: repeat(4,350px);
+    grid-template-rows: repeat(4,300px);
+    gap: 10px;
+} */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  background: white;
+  padding: 20px;
+  width: 900px;
+  margin-top: 100px;
+  margin-left: 300px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15); 
+  border-radius: 8px;
+}
+
+.container h1{
+  text-align: center;
+  margin-bottom: 20px;
+  color: #301d10;
+}
+
+.report1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.report5 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+h2{
+    padding: 20px;
+}
+.report2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.report2 label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.report2 input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  background: #301d10;
+  color: white;
+  border-radius: 5px;
+}
+.footer{
+    margin-top: 100px;
+    background-color: #301d10;
+    height: 100px;
+    color: white;
+}
+.footer1{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* Responsive Code for Beginners */
+@media (max-width: 950px) {
+  .container {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 768px) {
+  .nav_bar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .nav_link {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
+  }
+  .nav_link.active {
+    display: flex;
+  }
+  .hamburger {
+    display: flex !important;
+  }
+  .report1, .report5 {
+    grid-template-columns: 1fr;
+  }
+}

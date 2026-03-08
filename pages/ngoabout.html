@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NGO About</title>
+  <link rel="stylesheet" href="../styles/ngoabout.css">
+</head>
+
+<body>
+  <header>
+    <nav class="nav_bar">
+      <div class="logo">
+        <img class="logo_img" src="../assets/Logo.png" alt="Logo Image" width="70px" height="70px" />
+        <h2><a href="../pages/ngodashboard.html">Paw Care</a></h2>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav_link">
+        <li><b><a href="../pages/ngoabout.html">About</a></b></li>
+        <li><b><a href="../pages/registered_volunt.html">Registered Volunteer</a></b></li>
+        <li><b><a href="../pages/report_case.html">Report Cases</a></b></li>
+        <li><b><a href="../pages/completedcase.html">Completed Cases</a></b></li>
+        <li><b><a href="../pages/contact_ngo.html">Contact</a></b></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="about1">
+    <div class="about_img">
+      <img src="../assets/about1.jpeg" alt="About Image" />
+    </div>
+    <div class="about_content">
+      <h1>About Paw Care</h1>
+      <p>Paw Care is a compassionate initiative dedicated to protecting, caring for, and improving the
+        lives of stray and abandoned animals. We connect kind-hearted donors, passionate volunteers,
+        and trusted NGO partners on one platform to create a strong support system for animals in need.</p>
+    </div>
+
+  </section>
+  <section class="why">
+    <div class="whyvacci">
+      <h1>Why Vaccination is Important?</h1>
+      <p>Paw Care is a compassionate initiative dedicated to protecting, caring for, and improving the
+        lives of stray and abandoned animals. We connect kind-hearted donors, passionate volunteers,
+        and trusted NGO partners on one platform to create a strong support system for animals in need.</p>
+    </div>
+    <div class="vacci">
+      <img src="../assets/about2.jpeg" alt="Vaccination Image" />
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer1">
+      <p>2026 Paw Care!</p>
+    </div>
+  </footer>
+  <script>
+    function toggleMenu() {
+      const navMenu = document.querySelector('.nav_link');
+      navMenu.classList.toggle('active');
+    }
+  </script>
+</body>
+
+</html>
