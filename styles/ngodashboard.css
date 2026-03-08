@@ -5,7 +5,6 @@
     justify-content: space-between;
     padding: 16px;
     color: #301d10;
-    /* border: 1px solid #ccc; */
 }
 .nav_link{
     display: flex;
@@ -51,14 +50,13 @@
     padding: 0;
 }
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Poppins",sans-serif;
 }
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 80px 100px;
-  /* background: linear-gradient(135deg, #1e9a92, #2e9a92); */
   color: #301d10;
   min-height: 90vh;
   flex-wrap: wrap;
@@ -69,9 +67,9 @@ body{
 }
 
 .heroleft h1 {
-  font-size: 40px;
+  font-size: 50px;
   color: #301d10;
-  margin-bottom: 15px;
+  margin-bottom: 70px;
 }
 
 .heroleft p {
@@ -85,10 +83,12 @@ body{
 }
 
 .heroright img {
-  width: 80%;
-  border-radius: 10%;
+  width: 500px;
+  border-radius: 50%;
   max-width: 500px;
-  height: 550px;
+  height: 500px;
+  margin-left: 70px;
+  margin-bottom: 70px;
 }
 
 .mission {

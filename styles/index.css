@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: "Poppins",sans-serif;
 }
 body{
     background-color: white;
@@ -14,6 +15,7 @@ body{
     background-color: #301d10;
     color: white;
     border: 1px solid #301d10;
+    font-family: "Poppins",sans-serif;
 }
 .nav_link{
     display: flex;
