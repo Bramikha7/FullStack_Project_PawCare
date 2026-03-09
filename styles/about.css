@@ -56,7 +56,6 @@ body{
     border-radius: 50%;
 }
 .about1{
-    /* background:linear-gradient(#6b503f,white); */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -78,7 +77,6 @@ body{
     
 }
 .why{
-    /* background:linear-gradient(white,#6b503f); */
     display: flex;
     margin-top: 300px;
 }
@@ -114,8 +112,6 @@ body{
     justify-content: center;
     padding: 40px;
 }
-
-/* Responsive Code for Beginners */
 @media (max-width: 900px) {
   .about1, .why {
     flex-direction: column;
@@ -138,20 +134,20 @@ body{
     font-size: 40px;
   }
   .nav_bar {
-    flex-direction: row; /* Keep logo and hamburger row */
+    flex-direction: row; 
     justify-content: space-between;
   }
   .nav_link {
-    display: none; /* Hide menu items by default on mobile */
+    display: none;
     flex-direction: column;
     padding: 10px 0;
     align-items: center;
     width: 100%;
   }
   .nav_link.active {
-    display: flex; /* Show menu items when active class is added */
+    display: flex; 
   }
   .hamburger {
-    display: flex !important; /* Show hamburger button on mobile/tablet */
+    display: flex; 
   }
 }

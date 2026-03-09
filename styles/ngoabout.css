@@ -61,8 +61,9 @@ body{
 .about_img img{
     border-radius:50%; 
     height: 600px;
-    margin-top: 40px;
+    margin-top: 90px;
     margin-left: 50px;
+    filter: drop-shadow(1px 1px 30px #301d10);
 }
 .about_content{
     width: 500px;
@@ -72,6 +73,7 @@ body{
     margin-bottom: 100px;
     color:black;
     line-height: 1.9;
+    margin-top: 90px;
     
 }
 .why{
@@ -100,6 +102,7 @@ body{
     height: 300px;
     border-radius: 20px;
     margin-right: 100px;
+    filter: drop-shadow(1px 1px 30px #301d10);
 }
 .footer{
     background-color: #301d10;

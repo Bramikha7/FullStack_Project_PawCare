@@ -5,7 +5,6 @@
 }
 body{
     background-color: white;
-
 }
 .nav_bar{
     display: flex;
@@ -60,12 +59,10 @@ body{
     object-fit: cover;
 }
 .banner_img{
-    /* background:linear-gradient(#6b503f,white); */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-
 }
 .banner{
     max-width: 600px;
@@ -76,9 +73,9 @@ body{
     padding: 20px;
 }
 .banner h1{
-    color: black;
+    color: #301d10;
     margin-bottom: 100px;
-    font-size:60px;
+    font-size:50px;
     font-weight: 800;
 }
 .banner p{

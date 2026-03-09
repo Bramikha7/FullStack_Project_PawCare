@@ -86,8 +86,6 @@ nav {
     justify-content: center;
     padding: 40px;
 }
-
-/* Responsive Code for Beginners */
 @media (max-width: 600px) {
   .vaccinationform {
     width: 90%;

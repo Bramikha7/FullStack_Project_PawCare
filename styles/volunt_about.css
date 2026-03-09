@@ -5,7 +5,6 @@
     justify-content: space-between;
     padding: 16px;
     color: #301d10;
-    /* border: 1px solid #ccc; */
 }
 .nav_link{
     display: flex;
@@ -75,7 +74,6 @@ body{
     
 }
 .why{
-    /* background:linear-gradient(white,#6b503f); */
     display: flex;
     margin-top: 300px;
 }
@@ -111,8 +109,6 @@ body{
     justify-content: center;
     padding: 40px;
 }
-
-/* Responsive Code for Beginners */
 @media (max-width: 900px) {
   .about1, .why {
     flex-direction: column;

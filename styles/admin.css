@@ -243,9 +243,6 @@ tbody tr:hover {
   border-bottom: 1px solid white;
   gap: 15px;
 }
-/* .eventitem:last-of-type {
-  border-bottom: none;
-} */
 .eventname {
   font-size: 1.1rem;
   font-weight: 600;
@@ -295,8 +292,6 @@ tbody tr:hover {
     justify-content: center;
     padding: 40px;
 }
-
-/* Responsive Code for Beginners */
 @media (max-width: 900px) {
   .adminwrapper {
     grid-template-columns: 1fr;
@@ -304,20 +299,20 @@ tbody tr:hover {
   .sidebar {
     position: static;
     margin-bottom: 20px;
-    display: none; /* Hide sidebar on mobile */
+    display: none; 
   }
   .sidebar.active {
-    display: block; /* Show menu when toggled */
+    display: block; 
   }
   .hamburger {
     display: flex !important;
   }
   nav {
-    flex-direction: row; /* Keep logo and hamburger inline */
+    flex-direction: row;
     justify-content: space-between;
   }
   #navmenu {
-    display: none; /* Hide top menu/logout link if needed, or keep it */
+    display: none; 
     width: 100%;
     justify-content: center;
   }

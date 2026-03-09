@@ -153,8 +153,6 @@ td {
   justify-content: center;
   padding: 40px;
 }
-
-/* Responsive Code for Beginners */
 @media (max-width: 768px) {
   .nav_bar {
     flex-direction: row;
