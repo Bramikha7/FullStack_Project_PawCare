@@ -1,6 +1,6 @@
 const Base_URL = "http://127.0.0.1:8000";
 
-// Handle Sign Up
+// Signup
 const signupForm = document.getElementById("signupForm");
 if (signupForm) {
     signupForm.addEventListener("submit", async function (event) {
@@ -32,7 +32,7 @@ if (signupForm) {
             const ngoName = document.getElementById("ngoName").value;
             const aboutNgo = document.getElementById("aboutNgo").value;
             const serviceArea = document.getElementById("serviceArea").value;
-            const city = document.getElementById("city").value || "Unknown"; // Backend expects city
+            const city = document.getElementById("city").value; 
 
             dataObject = {
                 ngo_name: ngoName,
@@ -71,7 +71,7 @@ if (signupForm) {
     });
 }
 
-// Handle Sign In
+// signin
 const signinForm = document.getElementById("signinForm");
 if (signinForm) {
     signinForm.addEventListener("submit", async function (event) {
@@ -79,7 +79,7 @@ if (signinForm) {
 
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
-        const role = document.getElementById("roleSelect").value; // Added role select for login as well to know where to redirect
+        const role = document.getElementById("roleSelect").value; 
 
         if (!role) {
             alert("Please select your role to login");
@@ -110,7 +110,6 @@ if (signinForm) {
             const responseData = await response.json();
             console.log("Success:", responseData);
 
-            // Store session info
             if (role === "volunteer") {
                 localStorage.setItem("volunt_id", responseData.volunt_id);
                 localStorage.setItem("userRole", "volunteer");
