@@ -5,25 +5,76 @@
 body{
     font-family: "Poppins",sans-serif;
 }
-.image img{
-   height: 100vh;
-   width: 100%;
-   filter:blur(6px);
-   opacity: 0.8;
-   object-fit: cover;
+header {
+  background-color: #301d10;
+  color: white;
+  padding: 15px 0;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.container {
+  width: 95%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 15px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+#navlogo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.navmenu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.navmenu a{
+    color: white;
+    text-decoration:none ;
+}
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    margin-right: 20px;
+}
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+.navmenu li a {
+  font-weight: 500;
+  padding: 8px 15px;
+  color: white;
+  border-radius: 5px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.navmenu li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .label{
-    z-index: 1;
-    margin-top: -95vh;
-    position: relative;
+    margin-top: 100px;
     max-width: 400px;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 12px;
-    backdrop-filter: blur(10px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    background-color: white;
 }
 .label2{
     padding: 20px;
@@ -65,6 +116,17 @@ body{
     font-family: sans-serif;
     font-weight: 800;
     margin-top: 30px;
+}
+.footer{
+    margin-top: 82px;
+    background-color: #301d10;
+    height: 100px;
+    color: white;
+}
+.footer1{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
 }
 @media (max-width: 768px) {
   .image img {

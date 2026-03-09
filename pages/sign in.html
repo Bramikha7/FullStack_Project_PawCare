@@ -8,10 +8,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <section class="image">
-      <img src="../assets/sign in.png" alt="Sign In Image" />
-    </section>
-
+     <header>
+      <div class="container">
+        <nav>
+          <h2 id="navlogo">Paw Care</h2>
+          <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="navmenu">
+            <li><a href="../index.html">Back to Home</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
     <div class="label">
       <div class="label2">
         <h1>Login</h1>
@@ -46,11 +57,14 @@
           Don't have an Account?
           <a href="../pages/sign up.html">Sign Up</a>
         </p>
-        <a href="../index.html">
-          <button class="back"><b>Back to home</b></button>
-        </a>
+        
       </div>
     </div>
     <script src="../js/auth.js"></script>
+    <footer class="footer">
+        <div class="footer1">
+            <p>2026 Paw Care!</p>
+        </div>
+    </footer>
   </body>
 </html>
