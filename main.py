@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
-from db.database import engine, Base
+
 from fastapi.middleware.cors import CORSMiddleware
 from routers import volunt, ngo, vaccidrive, contact, case, donation
 import os
@@ -16,9 +16,21 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-Base.metadata.create_all(bind=engine)
+@app.on_event("startup")
+async def startup_event():
+    from db.database import engine, Base, DB_URL
+    import logging
+    # Masking password for security in logs
+    masked_url = DB_URL.split("@")[-1] if "@" in DB_URL else "unknown"
+    print(f"Connecting to database host/name: {masked_url}")
+    try:
+        Base.metadata.create_all(bind=engine)
+        print("Database tables verified/created successfully.")
+    except Exception as e:
+        print(f"Database connection failed during startup: {e}")
 
 # Include Routers
+
 app.include_router(volunt.router)
 app.include_router(ngo.router)
 app.include_router(vaccidrive.router)
