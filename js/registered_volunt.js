@@ -9,7 +9,7 @@ async function fetchVolunteers() {
         if (!response.ok) throw new Error("Failed to fetch volunteers");
         
         const data = await response.json();
-        voluntContainer.innerHTML = ""; // Clear any static content
+        voluntContainer.innerHTML = ""; 
 
         if (data.length === 0) {
             voluntContainer.innerHTML = "<p>No volunteers registered yet.</p>";

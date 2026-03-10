@@ -9,7 +9,7 @@ async function fetchDrives() {
         const tbody = document.querySelector(".drivetable tbody");
         
         if (tbody) {
-            tbody.innerHTML = ""; // Clear existing static rows
+            tbody.innerHTML = ""; 
             
             drives.forEach(drive => {
                 const row = document.createElement("tr");

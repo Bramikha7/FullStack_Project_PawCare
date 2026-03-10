@@ -93,12 +93,12 @@
           <h1 class="pagetitle">Manage Vaccination Drives</h1>
           <div class="card">
             <h3>Add New Drive</h3>
-            <form id="adminDriveForm" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px;">
-              <input type="text" id="driveTitle" placeholder="Title" required style="padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
-              <input type="text" id="driveLocation" placeholder="Location" required style="padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
-              <input type="date" id="driveDate" required style="padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
-              <input type="text" id="driveTime" placeholder="Time (e.g. 09:00 AM)" required style="padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
-              <button type="submit" class="action-btn edit-btn" style="color: white; border: none; cursor: pointer;">Add Drive</button>
+            <form id="adminDriveForm" class="admin-drive-form">
+              <input type="text" id="driveTitle" placeholder="Title" required>
+              <input type="text" id="driveLocation" placeholder="Location" required>
+              <input type="date" id="driveDate" required>
+              <input type="text" id="driveTime" placeholder="Time (e.g. 09:00 AM)" required>
+              <button type="submit" class="action-btn edit-btn">Add Drive</button>
             </form>
           </div>
           <div class="card">
@@ -123,7 +123,20 @@
         <div id="messagessection">
           <h1 class="pagetitle">Contact Messages</h1>
           <div class="card">
-            <p>Coming soon...</p>
+            <div class="tablecontainer">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody id="messageTableBody"></tbody>
+              </table>
+            </div>
           </div>
         </div>
       </main>
@@ -147,19 +160,40 @@
       const navLinks = document.querySelectorAll('.sidebarmenu a');
       const sections = document.querySelectorAll('.maincontent > div');
 
+      function showSection(targetId) {
+        sections.forEach(section => {
+          section.style.display = section.id === targetId ? 'block' : 'none';
+        });
+        navLinks.forEach(l => {
+          const href = l.getAttribute('href').substring(1);
+          if (href === targetId) {
+            l.classList.add('activepage');
+          } else {
+            l.classList.remove('activepage');
+          }
+        });
+      }
+
       navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
           e.preventDefault();
           const targetId = link.getAttribute('href').substring(1);
-          
-          sections.forEach(section => {
-            section.style.display = section.id === targetId ? 'block' : 'none';
-          });
-
-          navLinks.forEach(l => l.classList.remove('activepage'));
-          link.classList.add('activepage');
+          showSection(targetId);
+          window.location.hash = targetId;
         });
       });
+
+      // Handle hash on load
+      function handleHash() {
+        const hash = window.location.hash.substring(1);
+        if (hash) {
+          showSection(hash);
+        } else {
+          showSection('dashboard');
+        }
+      }
+      window.addEventListener('hashchange', handleHash);
+      handleHash();
 
       // --- Donations Logic ---
       const donorsTable = document.getElementById("table1");
@@ -201,7 +235,7 @@
               <td>${drive.drive_date}</td>
               <td>${drive.drive_time}</td>
               <td>
-                <button class="action-btn edit-btn" style="color: white; border: none; cursor: pointer;" onclick="editDrive(${drive.id}, '${drive.title}', '${drive.location}', '${drive.drive_date}', '${drive.drive_time}')">Edit</button>
+                <button class="action-btn edit-btn" onclick="editDrive(${drive.id})">Edit</button>
                 <button class="action-btn delete-btn" onclick="deleteDrive(${drive.id})">Delete</button>
               </td>
             `;
@@ -212,38 +246,8 @@
         }
       }
 
-      async function editDrive(id, currentTitle, currentLoc, currentDate, currentTime) {
-        const title = prompt("Enter new title:", currentTitle);
-        const location = prompt("Enter new location:", currentLoc);
-        const date = prompt("Enter new date (YYYY-MM-DD):", currentDate);
-        const time = prompt("Enter new time:", currentTime);
-
-        if (!title || !location || !date || !time) return;
-
-        const dataObject = {
-          title: title,
-          location: location,
-          drive_date: date,
-          drive_time_raw: time
-        };
-
-        try {
-          const res = await fetch(`${Base_URL}/vaccination-drives/${id}`, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(dataObject)
-          });
-          if (res.ok) {
-            alert("Drive updated successfully!");
-            fetchDrives();
-          } else {
-            const errorData = await res.json();
-            console.error("Server Error:", errorData);
-            alert("Update Error: " + JSON.stringify(errorData.detail));
-          }
-        } catch (error) {
-          console.error("Fetch Error:", error);
-        }
+      function editDrive(id) {
+        window.location.href = `edit_drive.html?id=${id}`;
       }
 
       adminDriveForm.addEventListener("submit", async (e) => {
@@ -288,6 +292,30 @@
         }
       }
 
+      // --- Contact Messages Logic ---
+      const messageTableBody = document.getElementById("messageTableBody");
+      async function fetchMessages() {
+        try {
+          const res = await fetch(`${Base_URL}/contact-messages/`);
+          const data = await res.json();
+          messageTableBody.innerHTML = "";
+          data.forEach(msg => {
+            const row = document.createElement("tr");
+            const date = msg.received_at ? new Date(msg.received_at).toLocaleDateString() : 'N/A';
+            row.innerHTML = `
+              <td>${msg.full_name || 'N/A'}</td>
+              <td>${msg.email}</td>
+              <td>${msg.subject}</td>
+              <td>${msg.message_content}</td>
+              <td>${date}</td>
+            `;
+            messageTableBody.appendChild(row);
+          });
+        } catch (error) {
+          console.error("Error fetching messages:", error);
+        }
+      }
+
       // --- Stats Placeholder Logic ---
       async function fetchStats() {
         try {
@@ -318,6 +346,7 @@
       window.onload = () => {
         fetchDonations();
         fetchDrives();
+        fetchMessages();
         fetchStats();
       };
     </script>

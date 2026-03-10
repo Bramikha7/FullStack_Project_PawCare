@@ -24,9 +24,9 @@ fetch(`${Base_URL}/case-reports/`)
         <p>
           <b>Status:</b>
           <select class="statusDropdown">
-            <option value="Pending">Pending</option>
-            <option value="In Progress">In Progress</option>
-            <option value="Completed">Completed</option>
+            <option value="Pending" ${item.status === "Pending" ? "selected" : ""}>Pending</option>
+            <option value="In Progress" ${item.status === "In Progress" ? "selected" : ""}>In Progress</option>
+            <option value="Completed" ${item.status === "Completed" ? "selected" : ""}>Completed</option>
           </select>
         </p>
       `;
@@ -46,15 +46,24 @@ fetch(`${Base_URL}/case-reports/`)
 
         try {
           let response;
-          if (selectedValue === "In Progress") {
-            // Use accept endpoint to assign NGO and set status to In Progress
+          if (selectedValue === "In Progress" || selectedValue === "Completed") {
+            
             response = await fetch(`${Base_URL}/case-reports/${caseId}/accept`, {
               method: "PATCH",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ ngo_id: parseInt(ngoId) })
             });
+            
+            
+            if (response.ok && selectedValue === "Completed") {
+              response = await fetch(`${Base_URL}/case-reports/${caseId}/status`, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ status: "Completed" })
+              });
+            }
           } else {
-            // Use status update endpoint for other statuses (e.g. Completed)
+            
             response = await fetch(`${Base_URL}/case-reports/${caseId}/status`, {
               method: "PATCH",
               headers: { "Content-Type": "application/json" },
@@ -65,7 +74,7 @@ fetch(`${Base_URL}/case-reports/`)
           if (response.ok) {
             alert(`Status updated to ${selectedValue}`);
             if (selectedValue === "Completed") {
-              // Optionally remove the card or redirect
+              
               card.remove();
             }
           } else {

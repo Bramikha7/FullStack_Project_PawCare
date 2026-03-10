@@ -1,6 +1,6 @@
 const Base_URL = "http://127.0.0.1:8000";
 
-// Handle Add Drive
+
 const driveForm = document.getElementById("driveForm");
 if (driveForm) {
     driveForm.addEventListener("submit", async function (event) {
@@ -29,7 +29,7 @@ if (driveForm) {
             if (!response.ok) throw new Error("Failed to add drive");
 
             alert("Vaccination drive added successfully!");
-            window.location.href = "../pages/vaccidrive.html";
+            window.location.href = "admin.html#eventssection"; 
         } catch (error) {
             console.error("Error:", error);
             alert("Error adding drive: " + error.message);
@@ -37,19 +37,40 @@ if (driveForm) {
     });
 }
 
-// Handle Edit Drive
+
 const editForm = document.getElementById("editForm");
 if (editForm) {
-    // Note: In a real app, you'd fetch existing data first. 
-    // For this simple version, we assume the user knows the ID or it's passed somehow.
-    // Here we'll just handle the submission.
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const driveId = urlParams.get('id');
+
+    if (driveId) {
+        
+        async function fetchExistingDrive() {
+            try {
+                const response = await fetch(`${Base_URL}/vaccination-drives/${driveId}`);
+                if (!response.ok) throw new Error("Failed to fetch drive data");
+                const drive = await response.json();
+                
+                document.getElementById("title").value = drive.title;
+                document.getElementById("location").value = drive.location;
+                document.getElementById("date").value = drive.drive_date;
+                document.getElementById("time").value = drive.drive_time; 
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Error loading drive: " + error.message);
+            }
+        }
+        fetchExistingDrive();
+    }
+
     editForm.addEventListener("submit", async function (event) {
         event.preventDefault();
 
-        // For simplicity, we might needs a way to get the ID. 
-        // Let's assume we use a prompt or a hidden field if it existed.
-        const driveId = prompt("Enter the ID of the drive you want to edit:");
-        if (!driveId) return;
+        if (!driveId) {
+            alert("No drive ID found in URL.");
+            return;
+        }
 
         const title = document.getElementById("title").value;
         const location = document.getElementById("location").value;
@@ -74,7 +95,7 @@ if (editForm) {
             if (!response.ok) throw new Error("Failed to update drive");
 
             alert("Vaccination drive updated successfully!");
-            window.location.href = "../pages/vaccidrive.html";
+            window.location.href = "admin.html#eventssection";
         } catch (error) {
             console.error("Error:", error);
             alert("Error updating drive: " + error.message);

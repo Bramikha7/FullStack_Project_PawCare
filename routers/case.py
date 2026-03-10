@@ -142,3 +142,5 @@ def accept_case_report(
         ngo_name=report.ngo.ngo_name if report.ngo else None,
         location=f"{report.address}, {report.city}"
     )
+
+

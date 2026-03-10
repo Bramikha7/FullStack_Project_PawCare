@@ -1,4 +1,4 @@
-// Donation Form
+
 const donationForm = document.getElementById("donationForm");
 if (donationForm) {
     donationForm.addEventListener("submit", async function (event) {

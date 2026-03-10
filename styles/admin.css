@@ -222,6 +222,24 @@ tbody tr:hover {
   background: #301d10;
   color: white;
 }
+/* New Vaccination form classes */
+.admin-drive-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+.admin-drive-form input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+.admin-drive-form .action-btn {
+  color: white;
+  border: none;
+  cursor: pointer;
+}
 .add-btn {
   background-color: #301d10;
   color: white;
