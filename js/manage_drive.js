@@ -1,4 +1,4 @@
-const Base_URL = "http://127.0.0.1:8000";
+const Base_URL = window.location.origin;
 
 
 const driveForm = document.getElementById("driveForm");
@@ -29,7 +29,7 @@ if (driveForm) {
             if (!response.ok) throw new Error("Failed to add drive");
 
             alert("Vaccination drive added successfully!");
-            window.location.href = "admin.html#eventssection"; 
+            window.location.href = "admin.html#eventssection";
         } catch (error) {
             console.error("Error:", error);
             alert("Error adding drive: " + error.message);
@@ -40,22 +40,22 @@ if (driveForm) {
 
 const editForm = document.getElementById("editForm");
 if (editForm) {
-    
+
     const urlParams = new URLSearchParams(window.location.search);
     const driveId = urlParams.get('id');
 
     if (driveId) {
-        
+
         async function fetchExistingDrive() {
             try {
                 const response = await fetch(`${Base_URL}/vaccination-drives/${driveId}`);
                 if (!response.ok) throw new Error("Failed to fetch drive data");
                 const drive = await response.json();
-                
+
                 document.getElementById("title").value = drive.title;
                 document.getElementById("location").value = drive.location;
                 document.getElementById("date").value = drive.drive_date;
-                document.getElementById("time").value = drive.drive_time; 
+                document.getElementById("time").value = drive.drive_time;
             } catch (error) {
                 console.error("Error:", error);
                 alert("Error loading drive: " + error.message);

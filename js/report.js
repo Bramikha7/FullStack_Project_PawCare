@@ -1,5 +1,5 @@
 const formElement = document.getElementById("myForm");
-const Base_URL = "http://127.0.0.1:8000";
+const Base_URL = window.location.origin;
 
 formElement.addEventListener("submit", async function (event) {
   event.preventDefault();
@@ -17,7 +17,7 @@ formElement.addEventListener("submit", async function (event) {
     best_time_to_visit: document.getElementById("time").value,
   };
 
-  
+
   for (const key in dataObject) {
     if (!dataObject[key]) {
       alert(`Please fill in the ${key.replace(/_/g, " ")} field.`);

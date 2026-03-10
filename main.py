@@ -1,23 +1,42 @@
 from fastapi import FastAPI
-from db.database import engine,Base
-from  fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+from db.database import engine, Base
+from fastapi.middleware.cors import CORSMiddleware
 from routers import volunt, ngo, vaccidrive, contact, case, donation
+import os
+
 app = FastAPI()
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],   # Allow all origins
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 Base.metadata.create_all(bind=engine)
-@app.get("/")
-def read_root():
-    return {"message": "Welcome to the PawCare API", "docs": "/docs"}
-    
+
+# Include Routers
 app.include_router(volunt.router)
 app.include_router(ngo.router)
 app.include_router(vaccidrive.router)
 app.include_router(contact.router)
 app.include_router(case.router)
 app.include_router(donation.router)
+
+# Serve Static Files
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+app.mount("/pages", StaticFiles(directory=os.path.join(BASE_DIR, "pages")), name="pages")
+app.mount("/js", StaticFiles(directory=os.path.join(BASE_DIR, "js")), name="js")
+app.mount("/styles", StaticFiles(directory=os.path.join(BASE_DIR, "styles")), name="styles")
+if os.path.exists(os.path.join(BASE_DIR, "assets")):
+    app.mount("/assets", StaticFiles(directory=os.path.join(BASE_DIR, "assets")), name="assets")
+
+@app.get("/")
+def read_root():
+    return FileResponse(os.path.join(BASE_DIR, "index.html"))
+
+

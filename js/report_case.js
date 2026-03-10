@@ -1,4 +1,4 @@
-const Base_URL = "http://127.0.0.1:8000";
+const Base_URL = window.location.origin;
 const cases = document.getElementById("main");
 
 fetch(`${Base_URL}/case-reports/`)
@@ -47,14 +47,14 @@ fetch(`${Base_URL}/case-reports/`)
         try {
           let response;
           if (selectedValue === "In Progress" || selectedValue === "Completed") {
-            
+
             response = await fetch(`${Base_URL}/case-reports/${caseId}/accept`, {
               method: "PATCH",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ ngo_id: parseInt(ngoId) })
             });
-            
-            
+
+
             if (response.ok && selectedValue === "Completed") {
               response = await fetch(`${Base_URL}/case-reports/${caseId}/status`, {
                 method: "PATCH",
@@ -63,7 +63,7 @@ fetch(`${Base_URL}/case-reports/`)
               });
             }
           } else {
-            
+
             response = await fetch(`${Base_URL}/case-reports/${caseId}/status`, {
               method: "PATCH",
               headers: { "Content-Type": "application/json" },
@@ -74,7 +74,7 @@ fetch(`${Base_URL}/case-reports/`)
           if (response.ok) {
             alert(`Status updated to ${selectedValue}`);
             if (selectedValue === "Completed") {
-              
+
               card.remove();
             }
           } else {

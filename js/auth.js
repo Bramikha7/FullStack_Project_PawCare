@@ -1,4 +1,4 @@
-const Base_URL = "http://127.0.0.1:8000";
+const Base_URL = window.location.origin;
 
 // Signup
 const signupForm = document.getElementById("signupForm");
@@ -32,7 +32,7 @@ if (signupForm) {
             const ngoName = document.getElementById("ngoName").value;
             const aboutNgo = document.getElementById("aboutNgo").value;
             const serviceArea = document.getElementById("serviceArea").value;
-            const city = document.getElementById("city").value; 
+            const city = document.getElementById("city").value;
 
             dataObject = {
                 ngo_name: ngoName,
@@ -79,7 +79,7 @@ if (signinForm) {
 
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
-        const role = document.getElementById("roleSelect").value; 
+        const role = document.getElementById("roleSelect").value;
 
         if (!role) {
             alert("Please select your role to login");

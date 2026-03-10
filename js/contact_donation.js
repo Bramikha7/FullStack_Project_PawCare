@@ -1,4 +1,4 @@
-const Base_URL = "http://127.0.0.1:8000";
+const Base_URL = window.location.origin;
 
 const contactForm = document.getElementById("contact_form");
 if (contactForm) {

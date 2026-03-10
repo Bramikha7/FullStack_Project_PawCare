@@ -1,4 +1,4 @@
-const Base_URL = "http://127.0.0.1:8000";
+const Base_URL = window.location.origin;
 
 async function fetchVolunteers() {
     const voluntContainer = document.getElementById("one");
@@ -7,9 +7,9 @@ async function fetchVolunteers() {
     try {
         const response = await fetch(`${Base_URL}/volunteers/`);
         if (!response.ok) throw new Error("Failed to fetch volunteers");
-        
+
         const data = await response.json();
-        voluntContainer.innerHTML = ""; 
+        voluntContainer.innerHTML = "";
 
         if (data.length === 0) {
             voluntContainer.innerHTML = "<p>No volunteers registered yet.</p>";

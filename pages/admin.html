@@ -1,229 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="../styles/admin.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="../styles/admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <header>
-      <div class="container">
-        <nav>
-          <h2 id="navlogo">Paw Care Admin</h2>
-          <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <ul id="navmenu">
-            <li><a href="../index.html"> Logout</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <div class="adminwrapper container">
-      <aside class="sidebar">
-        <ul class="sidebarmenu">
-          <li>
-            <a href="#dashboard" class="activepage"> Dashboard</a>
-          </li>
-          <li>
-            <a href="#volunteerssection">Donations</a>
-          </li>
-          <li>
-            <a href="#eventssection">Vaccination Drive</a>
-          </li>
-          <li>
-            <a href="#messagessection"> Messages</a>
-          </li>
+  <header>
+    <div class="container">
+      <nav>
+        <h2 id="navlogo">Paw Care Admin</h2>
+        <div class="hamburger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul id="navmenu">
+          <li><a href="../index.html"> Logout</a></li>
         </ul>
-      </aside>
-      <main class="maincontent">
-        <div id="dashboard">
-          <h1 class="pagetitle">Admin Dashboard Overview</h1>
-          <section class="statsgrid">
-            <div class="statcard">
-              <h3>Donation</h3>
-              <p class="statvalue" id="statDonation">0</p>
-            </div>
-            <div class="statcard">
-              <h3>Volunteers</h3>
-              <p class="statvalue" id="statVolunteers">0</p>
-            </div>
-            <div class="statcard">
-              <h3>NGO Partners</h3>
-              <p class="statvalue" id="statNGOs">0</p>
-            </div>
-            <div class="statcard">
-              <h3>Report Cases</h3>
-              <p class="statvalue" id="statReported">0</p>
-            </div>
-            <div class="statcard">
-              <h3>Completed Cases</h3>
-              <p class="statvalue" id="statCompleted">0</p>
-            </div>
-          </section>
-        </div>
-
-        <div id="volunteerssection" >
-          <h1 class="pagetitle">Donors Who are showing Interest to Donate</h1>
-          <div class="card">
-            <div class="tablecontainer">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Custom Amount</th>
-                    <th>Payment Method</th>
-                  </tr>
-                </thead>
-                <tbody id="table1"></tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div id="eventssection">
-          <h1 class="pagetitle">Manage Vaccination Drives</h1>
-          <div class="card">
-            <h3>Add New Drive</h3>
-            <form id="adminDriveForm" class="admin-drive-form">
-              <input type="text" id="driveTitle" placeholder="Title" required>
-              <input type="text" id="driveLocation" placeholder="Location" required>
-              <input type="date" id="driveDate" required>
-              <input type="text" id="driveTime" placeholder="Time (e.g. 09:00 AM)" required>
-              <button type="submit" class="action-btn edit-btn">Add Drive</button>
-            </form>
-          </div>
-          <div class="card">
-            <div class="tablecontainer">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Title</th>
-                    <th>Location</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="driveTableBody"></tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div id="messagessection">
-          <h1 class="pagetitle">Contact Messages</h1>
-          <div class="card">
-            <div class="tablecontainer">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Subject</th>
-                    <th>Message</th>
-                    <th>Date</th>
-                  </tr>
-                </thead>
-                <tbody id="messageTableBody"></tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </main>
+      </nav>
     </div>
+  </header>
+  <div class="adminwrapper container">
+    <aside class="sidebar">
+      <ul class="sidebarmenu">
+        <li>
+          <a href="#dashboard" class="activepage"> Dashboard</a>
+        </li>
+        <li>
+          <a href="#volunteerssection">Donations</a>
+        </li>
+        <li>
+          <a href="#eventssection">Vaccination Drive</a>
+        </li>
+        <li>
+          <a href="#messagessection"> Messages</a>
+        </li>
+      </ul>
+    </aside>
+    <main class="maincontent">
+      <div id="dashboard">
+        <h1 class="pagetitle">Admin Dashboard Overview</h1>
+        <section class="statsgrid">
+          <div class="statcard">
+            <h3>Donation</h3>
+            <p class="statvalue" id="statDonation">0</p>
+          </div>
+          <div class="statcard">
+            <h3>Volunteers</h3>
+            <p class="statvalue" id="statVolunteers">0</p>
+          </div>
+          <div class="statcard">
+            <h3>NGO Partners</h3>
+            <p class="statvalue" id="statNGOs">0</p>
+          </div>
+          <div class="statcard">
+            <h3>Report Cases</h3>
+            <p class="statvalue" id="statReported">0</p>
+          </div>
+          <div class="statcard">
+            <h3>Completed Cases</h3>
+            <p class="statvalue" id="statCompleted">0</p>
+          </div>
+        </section>
+      </div>
 
-    <footer class="footer">
-        <div class="footer1">
-            <p>2026 Paw Care!</p>
+      <div id="volunteerssection">
+        <h1 class="pagetitle">Donors Who are showing Interest to Donate</h1>
+        <div class="card">
+          <div class="tablecontainer">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Custom Amount</th>
+                  <th>Payment Method</th>
+                </tr>
+              </thead>
+              <tbody id="table1"></tbody>
+            </table>
+          </div>
         </div>
-    </footer>
+      </div>
+      <div id="eventssection">
+        <h1 class="pagetitle">Manage Vaccination Drives</h1>
+        <div class="card">
+          <h3>Add New Drive</h3>
+          <form id="adminDriveForm" class="admin-drive-form">
+            <input type="text" id="driveTitle" placeholder="Title" required>
+            <input type="text" id="driveLocation" placeholder="Location" required>
+            <input type="date" id="driveDate" required>
+            <input type="text" id="driveTime" placeholder="Time (e.g. 09:00 AM)" required>
+            <button type="submit" class="action-btn edit-btn">Add Drive</button>
+          </form>
+        </div>
+        <div class="card">
+          <div class="tablecontainer">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Location</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="driveTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div id="messagessection">
+        <h1 class="pagetitle">Contact Messages</h1>
+        <div class="card">
+          <div class="tablecontainer">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Subject</th>
+                  <th>Message</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody id="messageTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
 
-    <script>
-      function toggleMenu() {
-        
-        const sidebar = document.querySelector('.sidebar');
-        sidebar.classList.toggle('active');
-      }
-      const Base_URL = "http://127.0.0.1:8000";
+  <footer class="footer">
+    <div class="footer1">
+      <p>2026 Paw Care!</p>
+    </div>
+  </footer>
 
-      
-      const navLinks = document.querySelectorAll('.sidebarmenu a');
-      const sections = document.querySelectorAll('.maincontent > div');
+  <script>
+    function toggleMenu() {
 
-      function showSection(targetId) {
-        sections.forEach(section => {
-          section.style.display = section.id === targetId ? 'block' : 'none';
-        });
-        navLinks.forEach(l => {
-          const href = l.getAttribute('href').substring(1);
-          if (href === targetId) {
-            l.classList.add('activepage');
-          } else {
-            l.classList.remove('activepage');
-          }
-        });
-      }
+      const sidebar = document.querySelector('.sidebar');
+      sidebar.classList.toggle('active');
+    }
+    const Base_URL = window.location.origin;
 
-      navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const targetId = link.getAttribute('href').substring(1);
-          showSection(targetId);
-          window.location.hash = targetId;
-        });
+
+    const navLinks = document.querySelectorAll('.sidebarmenu a');
+    const sections = document.querySelectorAll('.maincontent > div');
+
+    function showSection(targetId) {
+      sections.forEach(section => {
+        section.style.display = section.id === targetId ? 'block' : 'none';
       });
-
-     
-      function handleHash() {
-        const hash = window.location.hash.substring(1);
-        if (hash) {
-          showSection(hash);
+      navLinks.forEach(l => {
+        const href = l.getAttribute('href').substring(1);
+        if (href === targetId) {
+          l.classList.add('activepage');
         } else {
-          showSection('dashboard');
+          l.classList.remove('activepage');
         }
-      }
-      window.addEventListener('hashchange', handleHash);
-      handleHash();
+      });
+    }
 
-     
-      const donorsTable = document.getElementById("table1");
-      async function fetchDonations() {
-        try {
-          const res = await fetch(`${Base_URL}/donations`);
-          const data = await res.json();
-          donorsTable.innerHTML = "";
-          data.forEach(item => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        showSection(targetId);
+        window.location.hash = targetId;
+      });
+    });
+
+
+    function handleHash() {
+      const hash = window.location.hash.substring(1);
+      if (hash) {
+        showSection(hash);
+      } else {
+        showSection('dashboard');
+      }
+    }
+    window.addEventListener('hashchange', handleHash);
+    handleHash();
+
+
+    const donorsTable = document.getElementById("table1");
+    async function fetchDonations() {
+      try {
+        const res = await fetch(`${Base_URL}/donations`);
+        const data = await res.json();
+        donorsTable.innerHTML = "";
+        data.forEach(item => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
               <td>${item.donor_name || 'Anonymous'}</td>
               <td>${item.donor_email || 'N/A'}</td>
               <td>${item.amount}</td>
               <td>${item.payment_method}</td>
             `;
-            donorsTable.appendChild(row);
-          });
-          document.getElementById('statDonation').innerText = data.length;
-        } catch (error) {
-          console.error("Error fetching donations:", error);
-        }
+          donorsTable.appendChild(row);
+        });
+        document.getElementById('statDonation').innerText = data.length;
+      } catch (error) {
+        console.error("Error fetching donations:", error);
       }
+    }
 
-      
-      const driveTableBody = document.getElementById("driveTableBody");
-      const adminDriveForm = document.getElementById("adminDriveForm");
 
-      async function fetchDrives() {
-        try {
-          const res = await fetch(`${Base_URL}/vaccination-drives`);
-          const data = await res.json();
-          driveTableBody.innerHTML = "";
-          data.forEach(drive => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
+    const driveTableBody = document.getElementById("driveTableBody");
+    const adminDriveForm = document.getElementById("adminDriveForm");
+
+    async function fetchDrives() {
+      try {
+        const res = await fetch(`${Base_URL}/vaccination-drives`);
+        const data = await res.json();
+        driveTableBody.innerHTML = "";
+        data.forEach(drive => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
               <td>${drive.title}</td>
               <td>${drive.location}</td>
               <td>${drive.drive_date}</td>
@@ -233,116 +235,117 @@
                 <button class="action-btn delete-btn" onclick="deleteDrive(${drive.id})">Delete</button>
               </td>
             `;
-            driveTableBody.appendChild(row);
-          });
-        } catch (error) {
-          console.error("Error fetching drives:", error);
-        }
+          driveTableBody.appendChild(row);
+        });
+      } catch (error) {
+        console.error("Error fetching drives:", error);
       }
+    }
 
-      function editDrive(id) {
-        window.location.href = `edit_drive.html?id=${id}`;
-      }
+    function editDrive(id) {
+      window.location.href = `edit_drive.html?id=${id}`;
+    }
 
-      adminDriveForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const dataObject = {
-          title: document.getElementById("driveTitle").value,
-          location: document.getElementById("driveLocation").value,
-          drive_date: document.getElementById("driveDate").value,
-          drive_time_raw: document.getElementById("driveTime").value
-        };
+    adminDriveForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const dataObject = {
+        title: document.getElementById("driveTitle").value,
+        location: document.getElementById("driveLocation").value,
+        drive_date: document.getElementById("driveDate").value,
+        drive_time_raw: document.getElementById("driveTime").value
+      };
 
-        try {
-          const res = await fetch(`${Base_URL}/vaccination-drives`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(dataObject)
-          });
-          if (res.ok) {
-            alert("Drive added successfully!");
-            adminDriveForm.reset();
-            fetchDrives();
-          } else {
-            const errorData = await res.json();
-            console.error("Server Error:", errorData);
-            alert("Error: " + JSON.stringify(errorData.detail));
-          }
-        } catch (error) {
-          console.error("Fetch Error:", error);
+      try {
+        const res = await fetch(`${Base_URL}/vaccination-drives`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(dataObject)
+        });
+        if (res.ok) {
+          alert("Drive added successfully!");
+          adminDriveForm.reset();
+          fetchDrives();
+        } else {
+          const errorData = await res.json();
+          console.error("Server Error:", errorData);
+          alert("Error: " + JSON.stringify(errorData.detail));
         }
-      });
-
-      async function deleteDrive(id) {
-        if (!confirm("Are you sure you want to delete this drive?")) return;
-        try {
-          const res = await fetch(`${Base_URL}/vaccination-drives/${id}`, { method: "DELETE" });
-          if (res.ok) {
-            alert("Drive deleted!");
-            fetchDrives();
-          }
-        } catch (error) {
-          console.error("Error deleting drive:", error);
-        }
+      } catch (error) {
+        console.error("Fetch Error:", error);
       }
+    });
 
-    
-      const messageTableBody = document.getElementById("messageTableBody");
-      async function fetchMessages() {
-        try {
-          const res = await fetch(`${Base_URL}/contact-messages/`);
-          const data = await res.json();
-          messageTableBody.innerHTML = "";
-          data.forEach(msg => {
-            const row = document.createElement("tr");
-            const date = msg.received_at ? new Date(msg.received_at).toLocaleDateString() : 'N/A';
-            row.innerHTML = `
+    async function deleteDrive(id) {
+      if (!confirm("Are you sure you want to delete this drive?")) return;
+      try {
+        const res = await fetch(`${Base_URL}/vaccination-drives/${id}`, { method: "DELETE" });
+        if (res.ok) {
+          alert("Drive deleted!");
+          fetchDrives();
+        }
+      } catch (error) {
+        console.error("Error deleting drive:", error);
+      }
+    }
+
+
+    const messageTableBody = document.getElementById("messageTableBody");
+    async function fetchMessages() {
+      try {
+        const res = await fetch(`${Base_URL}/contact-messages/`);
+        const data = await res.json();
+        messageTableBody.innerHTML = "";
+        data.forEach(msg => {
+          const row = document.createElement("tr");
+          const date = msg.received_at ? new Date(msg.received_at).toLocaleDateString() : 'N/A';
+          row.innerHTML = `
               <td>${msg.full_name || 'N/A'}</td>
               <td>${msg.email}</td>
               <td>${msg.subject}</td>
               <td>${msg.message_content}</td>
               <td>${date}</td>
             `;
-            messageTableBody.appendChild(row);
-          });
-        } catch (error) {
-          console.error("Error fetching messages:", error);
-        }
+          messageTableBody.appendChild(row);
+        });
+      } catch (error) {
+        console.error("Error fetching messages:", error);
       }
+    }
 
-     
-      async function fetchStats() {
-        try {
-         
-          const volRes = await fetch(`${Base_URL}/volunteers/count`);
-          const volData = await volRes.json();
-          document.getElementById('statVolunteers').innerText = volData.total_volunteers;
 
-         
-          const ngoRes = await fetch(`${Base_URL}/ngo-partners/count`);
-          const ngoData = await ngoRes.json();
-          document.getElementById('statNGOs').innerText = ngoData.total_ngo;
+    async function fetchStats() {
+      try {
 
-          
-          const caseRes = await fetch(`${Base_URL}/case-reports/`);
-          const cases = await caseRes.json();
-          document.getElementById('statReported').innerText = cases.length;
-          
-          const completedCount = cases.filter(c => c.status === "Completed").length;
-          document.getElementById('statCompleted').innerText = completedCount;
+        const volRes = await fetch(`${Base_URL}/volunteers/count`);
+        const volData = await volRes.json();
+        document.getElementById('statVolunteers').innerText = volData.total_volunteers;
 
-        } catch (error) {
-          console.error("Error fetching stats:", error);
-        }
+
+        const ngoRes = await fetch(`${Base_URL}/ngo-partners/count`);
+        const ngoData = await ngoRes.json();
+        document.getElementById('statNGOs').innerText = ngoData.total_ngo;
+
+
+        const caseRes = await fetch(`${Base_URL}/case-reports/`);
+        const cases = await caseRes.json();
+        document.getElementById('statReported').innerText = cases.length;
+
+        const completedCount = cases.filter(c => c.status === "Completed").length;
+        document.getElementById('statCompleted').innerText = completedCount;
+
+      } catch (error) {
+        console.error("Error fetching stats:", error);
       }
+    }
 
-      
-      window.onload = () => {
-        fetchDonations();
-        fetchDrives();
-        fetchMessages();
-        fetchStats();
-      };
-    </script>
+
+    window.onload = () => {
+      fetchDonations();
+      fetchDrives();
+      fetchMessages();
+      fetchStats();
+    };
+  </script>
 </body>
+
 </html>
