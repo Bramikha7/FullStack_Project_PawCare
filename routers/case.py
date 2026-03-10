@@ -7,8 +7,10 @@ from dependencies import get_db
 
 router = APIRouter(prefix="/case-reports", tags=["Case Reports"])
 
-@router.get("/")
+@router.get("/", response_model=list[CaseReportResponse])
 def get_all_case(db:Session=Depends(get_db)):
+
+
     return db.query(CaseReport).all()
 
 @router.post("/casereport", response_model=CaseReportResponse)
@@ -42,13 +44,17 @@ def get_all_case_reports(status: str | None = None, db: Session = Depends(get_db
     results = []
     for report in reports:
         results.append(CaseReportConciseResponse(
-            **report.__dict__,
+            case_id=report.case_id,
             volunteer_name=report.volunteer.name if report.volunteer else "Unknown",
             ngo_name=report.ngo.ngo_name if report.ngo else None,
-            location=f"{report.address}, {report.city}"
+            number_of_dogs=report.number_of_dogs,
+            location=f"{report.address}, {report.city}",
+            description=report.description,
+            status=report.status
         ))
         
-    return reports
+    return results
+
 @router.get("/{case_id}", response_model=CaseReportResponse)
 def get_case_report(case_id: int, db: Session = Depends(get_db)):
     report = db.query(CaseReport).filter(CaseReport.case_id == case_id).first()
@@ -146,10 +152,13 @@ def accept_case_report(
     report = db.query(CaseReport).options(joinedload(CaseReport.volunteer), joinedload(CaseReport.ngo)).filter(CaseReport.case_id == case_id).first()
 
     return CaseReportConciseResponse(
-        **report.__dict__,
+        case_id=report.case_id,
         volunteer_name=report.volunteer.name if report.volunteer else "Unknown",
         ngo_name=report.ngo.ngo_name if report.ngo else None,
-        location=f"{report.address}, {report.city}"
+        number_of_dogs=report.number_of_dogs,
+        location=f"{report.address}, {report.city}",
+        description=report.description,
+        status=report.status
     )
 
 
