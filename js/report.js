@@ -24,10 +24,11 @@ formElement.addEventListener("submit", async function (event) {
       return;
     }
   }
-
+  const volunt_id = localStorage.getItem("volunt_id")
+  console.log(volunt_id)
   try {
     const response = await fetch(
-      `${Base_URL}/case-reports/casereport?volunt_id=1`,
+      `${Base_URL}/case-reports/casereport?volunt_id=${volunt_id}`,
       {
         method: "POST",
         headers: {

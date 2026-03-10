@@ -17,6 +17,7 @@ fetch(`${Base_URL}/case-reports/getByStatus?status=Completed`)
   function myFunction(item){
     const card=document.createElement("div");
     card.classList.add("card");
+    console.log(item)
     card.innerHTML=`<p><b>Reported By:</b> ${item.volunteer_name}</p>
             <p><b>Number of Dogs:</b> ${item.number_of_dogs}</p>
             <p><b>Location:</b> ${item.location}</p>

@@ -41,7 +41,6 @@
         </ul>
       </aside>
       <main class="maincontent">
-        <!-- Dashboard Section -->
         <div id="dashboard">
           <h1 class="pagetitle">Admin Dashboard Overview</h1>
           <section class="statsgrid">
@@ -68,7 +67,6 @@
           </section>
         </div>
 
-        <!-- Donations Section -->
         <div id="volunteerssection" >
           <h1 class="pagetitle">Donors Who are showing Interest to Donate</h1>
           <div class="card">
@@ -87,8 +85,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Vaccination Drive Section -->
         <div id="eventssection">
           <h1 class="pagetitle">Manage Vaccination Drives</h1>
           <div class="card">
@@ -118,8 +114,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Messages Section (Placeholder) -->
         <div id="messagessection">
           <h1 class="pagetitle">Contact Messages</h1>
           <div class="card">
@@ -150,13 +144,13 @@
 
     <script>
       function toggleMenu() {
-        // Toggle the sidebar in admin panel
+        
         const sidebar = document.querySelector('.sidebar');
         sidebar.classList.toggle('active');
       }
       const Base_URL = "http://127.0.0.1:8000";
 
-      // Navigation Logic
+      
       const navLinks = document.querySelectorAll('.sidebarmenu a');
       const sections = document.querySelectorAll('.maincontent > div');
 
@@ -183,7 +177,7 @@
         });
       });
 
-      // Handle hash on load
+     
       function handleHash() {
         const hash = window.location.hash.substring(1);
         if (hash) {
@@ -195,7 +189,7 @@
       window.addEventListener('hashchange', handleHash);
       handleHash();
 
-      // --- Donations Logic ---
+     
       const donorsTable = document.getElementById("table1");
       async function fetchDonations() {
         try {
@@ -218,7 +212,7 @@
         }
       }
 
-      // --- Vaccination Drives Logic ---
+      
       const driveTableBody = document.getElementById("driveTableBody");
       const adminDriveForm = document.getElementById("adminDriveForm");
 
@@ -292,7 +286,7 @@
         }
       }
 
-      // --- Contact Messages Logic ---
+    
       const messageTableBody = document.getElementById("messageTableBody");
       async function fetchMessages() {
         try {
@@ -316,20 +310,20 @@
         }
       }
 
-      // --- Stats Placeholder Logic ---
+     
       async function fetchStats() {
         try {
-          // Fetch Volunteer Count
+         
           const volRes = await fetch(`${Base_URL}/volunteers/count`);
           const volData = await volRes.json();
           document.getElementById('statVolunteers').innerText = volData.total_volunteers;
 
-          // Fetch NGO Count
+         
           const ngoRes = await fetch(`${Base_URL}/ngo-partners/count`);
           const ngoData = await ngoRes.json();
           document.getElementById('statNGOs').innerText = ngoData.total_ngo;
 
-          // Fetch All Cases to calculate counts
+          
           const caseRes = await fetch(`${Base_URL}/case-reports/`);
           const cases = await caseRes.json();
           document.getElementById('statReported').innerText = cases.length;
@@ -342,7 +336,7 @@
         }
       }
 
-      // Initial Load
+      
       window.onload = () => {
         fetchDonations();
         fetchDrives();

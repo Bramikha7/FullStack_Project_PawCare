@@ -47,7 +47,8 @@ def get_all_case_reports(status: str | None = None, db: Session = Depends(get_db
             ngo_name=report.ngo.ngo_name if report.ngo else None,
             location=f"{report.address}, {report.city}"
         ))
-    return results
+        
+    return reports
 @router.get("/{case_id}", response_model=CaseReportResponse)
 def get_case_report(case_id: int, db: Session = Depends(get_db)):
     report = db.query(CaseReport).filter(CaseReport.case_id == case_id).first()
@@ -95,6 +96,14 @@ def update_case_report_status(
     db.refresh(report)
     return report
 
+@router.delete("/{case_id}",status_code=204)
+def delete_case(case_id:int,db:Session=Depends(get_db)):
+    case=db.query(CaseReport).filter(CaseReport.case_id==case_id).first()
+    if not case:
+        raise HTTPException(status_code=404,detail="Case not found")
+    db.delete(case)
+    db.commit()
+    return
 
 
 
