@@ -1,7 +1,10 @@
-const Base_URL = window.location.origin;
+// Backend URL (FastAPI)
+const Base_URL = "http://localhost:8000";
 
-// Signup
+
+// ================= SIGNUP =================
 const signupForm = document.getElementById("signupForm");
+
 if (signupForm) {
     signupForm.addEventListener("submit", async function (event) {
         event.preventDefault();
@@ -20,15 +23,22 @@ if (signupForm) {
         let dataObject = {};
         let endpoint = "";
 
+        // Volunteer signup
         if (role === "volunteer") {
+
             dataObject = {
                 name: name,
                 email: email,
                 phone_number: phone,
                 password: password
             };
+
             endpoint = "/volunteers/";
-        } else if (role === "ngo") {
+
+        } 
+        // NGO signup
+        else if (role === "ngo") {
+
             const ngoName = document.getElementById("ngoName").value;
             const aboutNgo = document.getElementById("aboutNgo").value;
             const serviceArea = document.getElementById("serviceArea").value;
@@ -43,27 +53,32 @@ if (signupForm) {
                 service_area: serviceArea,
                 city: city
             };
+
             endpoint = "/ngo-partners/";
         }
 
         try {
+
             const response = await fetch(`${Base_URL}${endpoint}`, {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json",
+                    "Content-Type": "application/json"
                 },
-                body: JSON.stringify(dataObject),
+                body: JSON.stringify(dataObject)
             });
 
             if (!response.ok) {
                 const errorData = await response.json();
-                throw new Error(errorData.detail || `HTTP error! Status: ${response.status}`);
+                throw new Error(errorData.detail || "Signup failed");
             }
 
             const responseData = await response.json();
-            console.log("Success:", responseData);
+            console.log("Signup Success:", responseData);
+
             alert("Registration successful! Please Sign In.");
+
             window.location.href = "../pages/sign in.html";
+
         } catch (error) {
             console.error("Error:", error);
             alert("Error during registration: " + error.message);
@@ -71,10 +86,15 @@ if (signupForm) {
     });
 }
 
-// signin
+
+
+// ================= SIGNIN =================
 const signinForm = document.getElementById("signinForm");
+
 if (signinForm) {
+
     signinForm.addEventListener("submit", async function (event) {
+
         event.preventDefault();
 
         const email = document.getElementById("email").value;
@@ -91,15 +111,19 @@ if (signinForm) {
             password: password
         };
 
-        const endpoint = role === "volunteer" ? "/volunteers/signin" : "/ngo-partners/signin";
+        const endpoint =
+            role === "volunteer"
+                ? "/volunteers/signin"
+                : "/ngo-partners/signin";
 
         try {
+
             const response = await fetch(`${Base_URL}${endpoint}`, {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json",
+                    "Content-Type": "application/json"
                 },
-                body: JSON.stringify(dataObject),
+                body: JSON.stringify(dataObject)
             });
 
             if (!response.ok) {
@@ -108,20 +132,27 @@ if (signinForm) {
             }
 
             const responseData = await response.json();
-            console.log("Success:", responseData);
+            console.log("Login Success:", responseData);
 
             if (role === "volunteer") {
+
                 localStorage.setItem("volunt_id", responseData.volunt_id);
                 localStorage.setItem("userRole", "volunteer");
+
                 window.location.href = "../pages/volunt_dashboard.html";
+
             } else {
+
                 localStorage.setItem("ngo_id", responseData.ngo_id);
                 localStorage.setItem("userRole", "ngo");
+
                 window.location.href = "../pages/ngodashboard.html";
             }
+
         } catch (error) {
             console.error("Error:", error);
             alert("Login failed: " + error.message);
         }
+
     });
 }
