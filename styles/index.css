@@ -144,17 +144,17 @@ body{
         margin-left: 0px;
     }
     .nav_link {
-        display: none; /* Hide menu by default on mobile */
+        display: none; 
         flex-direction: column;
         padding: 10px 0;
         align-items: center;
         width: 100%;
     }
     .nav_link.active {
-        display: flex; /* Show menu when active class is added */
+        display: flex; 
     }
     .hamburger {
-        display: flex !important; /* Show hamburger icon on mobile */
+        display: flex ;
     }
     .banner_img {
         flex-direction: column;

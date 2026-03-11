@@ -149,7 +149,7 @@ button {
     display: flex;
   }
   .hamburger {
-    display: flex !important;
+    display: flex ;
   }
   .report1, .report5 {
     grid-template-columns: 1fr;

@@ -170,7 +170,7 @@ td {
     display: flex;
   }
   .hamburger {
-    display: flex !important;
+    display: flex;
   }
   .drivecontainer {
     flex-direction: column;
