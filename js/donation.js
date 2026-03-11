@@ -1,3 +1,4 @@
+const Base_URL = "http://127.0.0.1:8000";
 
 const donationForm = document.getElementById("donationForm");
 if (donationForm) {
