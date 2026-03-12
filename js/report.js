@@ -1,5 +1,5 @@
 const formElement = document.getElementById("myForm");
-const Base_URL = window.location.origin;
+const Base_URL = "http://127.0.0.1:8000";
 
 formElement.addEventListener("submit", async function (event) {
   event.preventDefault();
@@ -17,15 +17,16 @@ formElement.addEventListener("submit", async function (event) {
     best_time_to_visit: document.getElementById("time").value,
   };
 
-
   for (const key in dataObject) {
     if (!dataObject[key]) {
       alert(`Please fill in the ${key.replace(/_/g, " ")} field.`);
       return;
     }
   }
-  const volunt_id = localStorage.getItem("volunt_id")
-  console.log(volunt_id)
+
+  const volunt_id = localStorage.getItem("volunt_id");
+  console.log(volunt_id);
+
   try {
     const response = await fetch(
       `${Base_URL}/case-reports/casereport?volunt_id=${volunt_id}`,
@@ -38,14 +39,17 @@ formElement.addEventListener("submit", async function (event) {
       }
     );
 
-    if (response.ok) {
-      const result = await response.json();
-      alert("Case reported successfully! NGOs will be notified.");
-      window.location.href = "volunt_dashboard.html";
-    } else {
-      const errorData = await response.json();
-      alert("Error reporting case: " + JSON.stringify(errorData.detail));
+    if (!response.ok) {
+      const text = await response.text();
+      console.error("Server error:", text);
+      alert("Error reporting case. Please check server.");
+      return;
     }
+
+    const result = await response.json();
+    alert("Case reported successfully! NGOs will be notified.");
+    window.location.href = "volunt_dashboard.html";
+
   } catch (error) {
     console.error("Error:", error);
     alert("Network error. Please try again later.");
