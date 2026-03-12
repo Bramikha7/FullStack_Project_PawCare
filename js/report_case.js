@@ -1,4 +1,4 @@
-const Base_URL = window.location.origin;
+const Base_URL = "http://127.0.0.1:8000";
 const cases = document.getElementById("main");
 
 fetch(`${Base_URL}/case-reports/`)

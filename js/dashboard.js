@@ -1,4 +1,4 @@
-const Base_URL = window.location.origin;
+const Base_URL = "http://127.0.0.1:8000";
 
 async function updateCounts() {
     try {
