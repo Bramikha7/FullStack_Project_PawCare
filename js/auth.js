@@ -1,8 +1,6 @@
-// Backend URL (FastAPI)
+
 const Base_URL = "http://localhost:8000";
 
-
-// ================= SIGNUP =================
 const signupForm = document.getElementById("signupForm");
 
 if (signupForm) {
@@ -23,7 +21,6 @@ if (signupForm) {
         let dataObject = {};
         let endpoint = "";
 
-        // Volunteer signup
         if (role === "volunteer") {
 
             dataObject = {
@@ -36,7 +33,6 @@ if (signupForm) {
             endpoint = "/volunteers/";
 
         } 
-        // NGO signup
         else if (role === "ngo") {
 
             const ngoName = document.getElementById("ngoName").value;
@@ -87,8 +83,6 @@ if (signupForm) {
 }
 
 
-
-// ================= SIGNIN =================
 const signinForm = document.getElementById("signinForm");
 
 if (signinForm) {
