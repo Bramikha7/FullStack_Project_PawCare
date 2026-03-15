@@ -90,6 +90,7 @@ body{
     margin-top: 40px;
     border-radius: 50%;
     margin-right: 50px;
+    filter: drop-shadow(1px 1px 30px #301d10);
 }
 .mission{
     

@@ -65,6 +65,7 @@ body{
     height: 600px;
     margin-top: 40px;
     margin-left: 50px;
+    filter: drop-shadow(1px 1px 30px #301d10);
 }
 .about_content{
     width: 500px;
@@ -101,6 +102,7 @@ body{
     height: 300px;
     border-radius: 20px;
     margin-right: 100px;
+    filter: drop-shadow(1px 1px 30px #301d10);
 }
 .footer{
     background-color: #301d10;
