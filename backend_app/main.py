@@ -40,15 +40,16 @@ app.include_router(donation.router)
 
 # Serve Static Files
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+FRONTEND_DIR = os.path.join(os.path.dirname(BASE_DIR), "frontend")
 
-app.mount("/pages", StaticFiles(directory=os.path.join(BASE_DIR, "pages")), name="pages")
-app.mount("/js", StaticFiles(directory=os.path.join(BASE_DIR, "js")), name="js")
-app.mount("/styles", StaticFiles(directory=os.path.join(BASE_DIR, "styles")), name="styles")
-if os.path.exists(os.path.join(BASE_DIR, "assets")):
-    app.mount("/assets", StaticFiles(directory=os.path.join(BASE_DIR, "assets")), name="assets")
+app.mount("/pages", StaticFiles(directory=os.path.join(FRONTEND_DIR, "pages")), name="pages")
+app.mount("/js", StaticFiles(directory=os.path.join(FRONTEND_DIR, "js")), name="js")
+app.mount("/styles", StaticFiles(directory=os.path.join(FRONTEND_DIR, "styles")), name="styles")
+if os.path.exists(os.path.join(FRONTEND_DIR, "assets")):
+    app.mount("/assets", StaticFiles(directory=os.path.join(FRONTEND_DIR, "assets")), name="assets")
 
 @app.get("/")
 def read_root():
-    return FileResponse(os.path.join(BASE_DIR, "index.html"))
+    return FileResponse(os.path.join(FRONTEND_DIR, "index.html"))
 
 

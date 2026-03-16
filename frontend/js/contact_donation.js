@@ -1,5 +1,5 @@
 
-const Base_URL = "http://127.0.0.1:8000";
+const Base_URL = (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.protocol === "file:") ? "http://127.0.0.1:8000" : "";
 
 const contactForm = document.getElementById("contact_form");
 
@@ -9,20 +9,20 @@ if (contactForm) {
 
         event.preventDefault();
 
-        const name = contactForm.querySelector('input[name="user_name"]').value;
-        const email = contactForm.querySelector('input[name="user_email"]').value;
-        const phone=contactForm.querySelector('input[name="user_phone"]').value;
-        const city=contactForm.querySelector('input[name="user_city"]').value;
-        const subject = contactForm.querySelector('textarea[name="subject"]').value;
-        const message = contactForm.querySelector('textarea[name="message"]').value;
+        const nameEle = contactForm.querySelector('input[name="user_name"]');
+        const emailEle = contactForm.querySelector('input[name="user_email"]');
+        const phoneEle = contactForm.querySelector('input[name="user_phone"]');
+        const cityEle = contactForm.querySelector('input[name="user_city"]');
+        const subjectEle = contactForm.querySelector('textarea[name="subject"]');
+        const messageEle = contactForm.querySelector('textarea[name="message"]');
 
         const dataObject = {
-            full_name: name,
-            email: email,
-            phone_num:phone,
-            city:city,
-            subject: subject,
-            message_content: message
+            full_name: nameEle ? nameEle.value : "",
+            email: emailEle ? emailEle.value : "",
+            phone_num: phoneEle ? phoneEle.value : null,
+            city: cityEle ? cityEle.value : null,
+            subject: subjectEle ? subjectEle.value : "",
+            message_content: messageEle ? messageEle.value : ""
         };
 
         try {

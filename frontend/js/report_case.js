@@ -1,4 +1,4 @@
-const Base_URL = "http://127.0.0.1:8000";
+const Base_URL = (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.protocol === "file:") ? "http://127.0.0.1:8000" : "";
 const cases = document.getElementById("main");
 
 fetch(`${Base_URL}/case-reports/`)
