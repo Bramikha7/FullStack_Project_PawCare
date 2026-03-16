@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <link rel="stylesheet" href="../styles/adminlogin.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+     <header>
+      <div class="container">
+        <nav>
+          <h2 id="navlogo">Paw Care</h2>
+          <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="navmenu">
+            <!-- <li><a href="../index.html">Back to Home</a></li> -->
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container1">
+      <img src="../assets/sign in.png"/>
+    <div class="label">
+      <div class="label2">
+        <h1>Login</h1>
+
+        <form id="signinForm" action="../pages/admin.html">
+
+          <label>Email</label><br />
+          <input
+            type="text"
+            id="email"
+            required
+            placeholder="Enter your Email"
+          /><br /><br />
+
+          <label>Password</label><br />
+          <input
+            type="password"
+            id="password"
+            required
+            placeholder="Enter your Password"
+          /><br /><br />
+          <button type="submit" class="back1">Login</button>
+        </form>
+        
+      </div>
+    </div>
+    </div>
+    <script src="../js/auth.js"></script>
+    <footer class="footer">
+        <div class="footer1">
+            <p>2026 Paw Care!</p>
+        </div>
+    </footer>
+  </body>
+</html>
