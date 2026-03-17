@@ -212,7 +212,7 @@ tbody tr:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 .edit-btn {
-  background: #301d10;
+  background:white;
 }
 .edit-btn a{
   text-decoration: none;
