@@ -4,6 +4,7 @@
 }
 body{
     font-family: "Poppins",sans-serif;
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
 }
 header {
   background-color: #301d10;
@@ -93,6 +94,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: #301d10; */
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
@@ -110,8 +112,10 @@ nav {
     min-height: 400px;
     margin-left: 150px;
     margin-right: auto;
+    border: 1px solid #301d10;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 25px rgba(243, 209, 209, 0.4);
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
 }
 .label2{
     padding: 20px;

@@ -4,6 +4,7 @@
 }
 body{
     font-family: "Poppins",sans-serif;
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
 }
 header {
   background-color: #301d10;
@@ -139,4 +140,50 @@ nav {
     width: 90%;
     position: static;
   }
+}
+
+.name{
+  width: 300px;
+  height: 30px;
+  border-radius: 8px;
+}
+textarea{
+  width: 300px;
+  height: 30px;
+  border-radius: 8px;
+}
+
+#name::placeholder{
+  padding-left: 15px;
+  color: rgb(151, 149, 149);
+}
+#email{
+  width: 300px;
+  height: 30px;
+  border-radius: 8px;
+}
+
+#email::placeholder{
+  padding-left: 15px;
+  color: rgb(151, 149, 149);
+}
+#phone{
+  width: 300px;
+  height: 30px;
+  border-radius: 8px;
+}
+
+#phone::placeholder{
+  padding-left: 15px;
+  color: rgb(151, 149, 149);
+}
+#password{
+  width: 300px;
+  height: 30px;
+  border-radius: 8px;
+}
+
+#password::placeholder{
+  padding-left: 15px;
+  color: rgb(151, 149, 149);
 }

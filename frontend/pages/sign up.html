@@ -30,7 +30,7 @@
       <form id="signupForm">
 
         <label>Name</label><br />
-        <input type="text" id="name" required placeholder="Enter your Name" /><br /><br />
+        <input type="text" id="name" class="name" required placeholder="Enter your Name" /><br /><br />
 
         <label>Email</label><br />
         <input type="email" id="email" required placeholder="Enter your Email" /><br /><br />
@@ -46,10 +46,9 @@
         </select>
         <br /><br />
 
-        <div id="result"></div>
-
         <label>Password</label><br />
         <input type="password" id="password" required placeholder="Enter your Password" /><br /><br />
+        <div id="result"></div>
 
         <button type="submit">Sign Up</button>
 
@@ -74,10 +73,10 @@
 
         resultDiv.innerHTML = `
           <label>NGO Name:</label><br>
-          <input type="text" id="ngoName" required placeholder="Enter NGO Name"><br><br>
+          <input type="text" id="ngoName" class = "name" required placeholder="Enter NGO Name"><br><br>
 
           <label>About NGO:</label><br>
-          <textarea id="aboutNgo" required placeholder="Write about NGO"></textarea><br><br>
+          <textarea id="aboutNgo" class = "name" rows="4" cols="30" required placeholder="Write about NGO"></textarea><br><br>
 
           <label>Service Area:</label><br>
           <input type="text" id="serviceArea" required placeholder="Enter Service Area"><br><br>

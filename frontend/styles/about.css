@@ -5,6 +5,7 @@
 }
 body{
     background-color: white;
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
 }
 .nav_bar{
     display: flex;
@@ -67,7 +68,7 @@ body{
     margin-left: 50px;
     filter: drop-shadow(1px 1px 30px #301d10);
 }
-.about_content{
+.about_content {
     width: 500px;
     font-size: large;
     padding: 50px;
@@ -75,7 +76,13 @@ body{
     margin-bottom: 100px;
     color:black;
     line-height: 1.9;
-    
+    }
+    .about_content h1{
+        font-size: 60px;
+        line-height: 1.2;
+    }
+.about_content span{
+    font-size: 76px;
 }
 .why{
     display: flex;
