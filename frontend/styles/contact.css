@@ -94,6 +94,7 @@ body{
     background-color: #6b503f;
     border-radius: 8px;
     color: white;
+    cursor: pointer;
 }
 textarea{
     width: 100%;

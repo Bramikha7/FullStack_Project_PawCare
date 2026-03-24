@@ -86,6 +86,9 @@ nav {
     text-decoration: none;
     color: black;
 }
+.back1{
+    cursor: pointer;
+}
 .container1{
     width:900px;
     height: 600px;
