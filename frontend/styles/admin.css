@@ -207,7 +207,7 @@ tbody tr:hover {
   white-space: nowrap;
 
 }
-.action-btn .edit-btn{
+.action-btn edit-btn{
   background-color: #301d10;
   color: white;
 }
